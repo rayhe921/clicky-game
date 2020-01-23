@@ -1,0 +1,78 @@
+[
+    {
+        "id": 1,
+        "name": "001 Bulbasaur",
+        "image": "./img/001Bulbasaur.png",
+        "style": "background-image: url('')"
+    },
+    {
+        "id": 2,
+        "name": "004 Charmander",
+        "image": "./img/004Charmander.png"
+    },
+    {
+        "id": 3,
+        "name": "007 Squirtle",
+        "image": "./img/007Squirtle.png"
+    },
+    {
+        "id": 4,
+        "name": "010 Caterpie",
+        "image": "./img/010Caterpie.png"
+    },
+    {
+        "id": 5,
+        "name": "013 Weedle",
+        "image": "./img/013Weedle.png"
+    },
+    {
+        "id": 6,
+        "name": "016 Pidgey",
+        "image": "./img/016Pidgey.png"
+    },
+    {
+        "id": 7,
+        "name": "019 Rattata",
+        "image": "./img/019Rattata.png"
+    },
+    {
+        "id": 8,
+        "name": "023 Ekans",
+        "image": "./img/023Ekans.png"
+    },
+    {
+        "id": 9,
+        "name": "025 Pikachu",
+        "image": "./img/025Pikachu.png"
+    },
+    {
+        "id": 10,
+        "name": "027 Sandshrew",
+        "image": "./img/027Sandshrew.png"
+    },
+    {
+        "id": 11,
+        "name": "037 Vulpix",
+        "image": "./img/037Vulpix.png"
+    },
+    {
+        "id": 12,
+        "name": "039 Jigglypuff",
+        "image": "./img/039Jigglypuff.png"
+    },
+    {
+        "id": 13,
+        "name": "041 Zubat",
+        "image": "./img/041Zubat.png"
+    },
+    {
+        "id": 14,
+        "name": "050 Diglett",
+        "image": "./img/050Diglett.png"
+    },
+    {
+        "id": 15,
+        "name": "054 Psyduck",
+        "image": "./img/054Psyduck.png"
+    }
+]

@@ -1,0 +1,10 @@
+.image{
+    width: 10rem;
+    box-shadow: 10px 10px 5px grey;
+}
+
+.image:hover{
+    transform: scale(1.05);
+
+}
+
