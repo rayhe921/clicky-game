@@ -5,11 +5,11 @@ function Navbar(props) {
     return (
         <nav className="navbar fixed-top navbar-light bg-primary">
   <a className="navbar-brand" href="/">{props.children}</a>
-  <span class="navbar-text">
+  <span className="navbar-text">
     {props.navText}
   </span>
-  <span class="navbar-text">
-    Score: {props.score} / Top Score: {props.topScore}  
+  <span className="navbar-text">
+    Score: {props.score} / Top Score: {props.highScore}  
   </span>
 </nav>
     )

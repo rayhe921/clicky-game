@@ -2,8 +2,7 @@
     {
         "id": 1,
         "name": "001 Bulbasaur",
-        "image": "./img/001Bulbasaur.png",
-        "style": "background-image: url('')"
+        "image": "./img/001Bulbasaur.png"
     },
     {
         "id": 2,

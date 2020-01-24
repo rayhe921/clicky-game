@@ -8,36 +8,55 @@ import ImageButton from './components/ImageButtton';
 import GridWrapper from './components/GridWrapper'
 
 class App extends Component {
-  
-  state = {pokemons};
+
+  state = {
+    pokemons,
+    clickedPokemon: [],
+    score: 0,
+    highScore: 0,
+    navText: "Click an image to begin!"
+  };
  
-  shuffle(array) {
-    let currentIndex = array.length, temporaryValue, randomIndex;
-  
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-  
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-  
-      // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
+  buttonClick = (id) => {
+    
+    let clickedPokemon = this.state.clickedPokemon;
+
+    if(clickedPokemon.includes(id)){
+      this.setState({
+        clickedPokemon: [],
+        score: 0,
+        navText: "You guessed Wrong"
+      })
+    }else{
+      this.setState({
+        clickedPokemon: clickedPokemon.push(id),
+        score: this.state.score + 1,
+        navText: "You guessed correct"
+      })
+
+      console.log(clickedPokemon)
+
+      if(this.state.highScore < this.state.score){
+          this.setState({
+            highScore: this.state.highScore + 1
+          })
+      }
     }
-  
-    this.setState({ array });
+
   }
 
   render(){
     return(
       <Wrapper>
-        <Navbar>
+        <Navbar 
+          navText={this.state.navText}
+          score={this.state.score}
+          highScore={this.state.highScore}
+        >
           Pokemon Clicky Game
           </Navbar>
       
-      <Header></Header>
+      <Header ></Header>
       <GridWrapper>
       {this.state.pokemons.map(pokemon => (
         <ImageButton 
@@ -45,7 +64,8 @@ class App extends Component {
           key={pokemon.id}
           name={pokemon.name}
           image={pokemon.image}
-        />
+          buttonClick={this.buttonClick}
+          />
       ))}
       </GridWrapper>
       </Wrapper>
