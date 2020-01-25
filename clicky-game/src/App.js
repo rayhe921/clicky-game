@@ -17,9 +17,10 @@ class App extends Component {
     navText: "Click an image to begin!"
   };
 
+
   buttonClick = (id) => {
 
-    let clickedPokemon = this.state.clickedPokemon;
+    const clickedPokemon = this.state.clickedPokemon;
 
     if (clickedPokemon.includes(id)) {
       this.setState({
@@ -27,23 +28,24 @@ class App extends Component {
         score: 0,
         navText: "You guessed Wrong"
       })
-    } else {
+      return;
+    }
+    else if (this.state.highScore < this.state.score) {
       this.setState({
-        clickedPokemon: clickedPokemon.push(id),
+        highScore: this.state.highScore + 1
+      })
+    }else {
+      clickedPokemon.push(id)
+      this.setState({
+        clickedPokemon: clickedPokemon,
         score: this.state.score + 1,
         navText: "You guessed correct"
       })
 
       console.log(clickedPokemon)
 
-      if (this.state.highScore < this.state.score) {
-        this.setState({
-          highScore: this.state.highScore + 1
-        })
-      }
-      this.shuffle(this.state.array)
+      this.shuffle(this.state.pokemons)
     }
-
   }
 
   shuffle = (arr) => {
