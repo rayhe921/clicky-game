@@ -16,18 +16,18 @@ class App extends Component {
     highScore: 0,
     navText: "Click an image to begin!"
   };
- 
+
   buttonClick = (id) => {
-    
+
     let clickedPokemon = this.state.clickedPokemon;
 
-    if(clickedPokemon.includes(id)){
+    if (clickedPokemon.includes(id)) {
       this.setState({
         clickedPokemon: [],
         score: 0,
         navText: "You guessed Wrong"
       })
-    }else{
+    } else {
       this.setState({
         clickedPokemon: clickedPokemon.push(id),
         score: this.state.score + 1,
@@ -36,38 +36,50 @@ class App extends Component {
 
       console.log(clickedPokemon)
 
-      if(this.state.highScore < this.state.score){
-          this.setState({
-            highScore: this.state.highScore + 1
-          })
+      if (this.state.highScore < this.state.score) {
+        this.setState({
+          highScore: this.state.highScore + 1
+        })
       }
+      this.shuffle(this.state.array)
     }
 
   }
 
-  render(){
-    return(
+  shuffle = (arr) => {
+    for (let i = arr.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]]
+    }
+  }
+
+  render() {
+    return (
       <Wrapper>
-        <Navbar 
+        <Navbar
           navText={this.state.navText}
           score={this.state.score}
           highScore={this.state.highScore}
         >
           Pokemon Clicky Game
           </Navbar>
-      
-      <Header ></Header>
-      <GridWrapper>
-      {this.state.pokemons.map(pokemon => (
-        <ImageButton 
-          id={pokemon.id}
-          key={pokemon.id}
-          name={pokemon.name}
-          image={pokemon.image}
-          buttonClick={this.buttonClick}
-          />
-      ))}
-      </GridWrapper>
+
+        <Header
+          title="Pokemon Clicky Game"
+          description="Click on an image to earn points, but don't click on any more than once!"
+        ></Header>
+        <GridWrapper>
+          {this.state.pokemons.map(pokemon => (
+            <ImageButton
+              id={pokemon.id}
+              key={pokemon.id}
+              name={pokemon.name}
+              image={pokemon.image}
+              buttonClick={this.buttonClick}
+              array={pokemon}
+            />
+          ))}
+        </GridWrapper>
       </Wrapper>
     )
 

@@ -5,8 +5,8 @@ function Header(props) {
     return (
         <div className="jumbotron jumbotron-fluid">
             <div className="container">
-                <h1 className="display-4 title">Pokemon Clicky Game</h1>
-                <p className="lead description">Click on an image to earn points, but don't click on any more than once!</p>
+    <h1 className="display-4 title">{props.title}</h1>
+                <p className="lead description">{props.description}</p>
             </div>
         </div>
     )

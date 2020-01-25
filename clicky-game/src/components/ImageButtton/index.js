@@ -4,7 +4,7 @@ import "./style.css";
 function ImageButton(props) {
     return (
         <div className="img-container">
-        <img onClick={() => props.buttonClick(props.id)} 
+        <img onClick={() => props.buttonClick(props.pokemon)} 
         className="image img-thumbnail" 
         id={props.id} 
         alt={props.name} 
