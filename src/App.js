@@ -17,8 +17,10 @@ class App extends Component {
     navText: "Click an image to begin!"
   };
 
+  buttonClick = (event, id) => {
 
-  buttonClick = (id) => {
+    event.stopPropagation();
+    event.nativeEvent.stopImmediatePropagation();
 
     const clickedPokemon = this.state.clickedPokemon;
 
@@ -28,7 +30,7 @@ class App extends Component {
         score: 0,
         navText: "You guessed Wrong"
       })
-      return;
+      
     }
     else if (this.state.highScore < this.state.score) {
       this.setState({
@@ -77,8 +79,7 @@ class App extends Component {
               key={pokemon.id}
               name={pokemon.name}
               image={pokemon.image}
-              buttonClick={this.buttonClick}
-              array={pokemon}
+              buttonClick={event => this.buttonClick(event, pokemon)}
             />
           ))}
         </GridWrapper>

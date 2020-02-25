@@ -5,7 +5,7 @@ function Navbar(props) {
     return (
         <nav className="navbar fixed-top navbar-light bg-primary">
   <a className="navbar-brand" href="/">{props.children}</a>
-  <span className="navbar-text">
+  <span className="navbar-text title-font">
     {props.navText}
   </span>
   <span className="navbar-text">
