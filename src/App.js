@@ -32,7 +32,7 @@ class App extends Component {
       })
       
     }
-    else if (this.state.highScore < this.state.score) {
+    else if (this.state.highScore <= this.state.score) {
       this.setState({
         highScore: this.state.highScore + 1
       })
@@ -43,8 +43,6 @@ class App extends Component {
         score: this.state.score + 1,
         navText: "You guessed correct"
       })
-
-      console.log(clickedPokemon)
 
       this.shuffle(this.state.pokemons)
     }
